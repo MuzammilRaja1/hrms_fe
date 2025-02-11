@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.react-tabs__tab--selected{
+    background-color: rgb(17, 112, 190) !important;
+    border-radius: 25px !important;
+    color: #fff !important;
+}
+
+
+
+/* For screens smaller than 400px (Extra Small Screens - XS) */
+@media (max-width: 400px) {
+    img.logo {
+      width: 80%; /* Adjust logo width for very small screens */
+      max-width: 100%;
+    }
+  }
+  
+  /* For screens between 400px and 500px */
+  @media (min-width: 400px) and (max-width: 500px) {
+    img.logo {
+      width: 14rem; /* 14rem width for screens between 400px and 500px */
+    }
+  }
+  
+  /* For small screens (Small Screens - SM) between 500px and 640px */
+  @media (min-width: 500px) and (max-width: 640px) {
+    img.logo {
+      width: 16rem; /* 16rem width for small screens */
+    }
+  }
+  
+  /* For medium screens (Medium Screens - MD) between 640px and 768px */
+  @media (min-width: 640px) and (max-width: 768px) {
+    img.logo {
+      width: 18rem; /* 18rem width for medium screens */
+    }
+  }
+  
+  /* For large screens (Large Screens - LG) between 768px and 1024px */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    img.logo {
+      width: 20rem; /* 20rem width for large screens */
+    }
+  }
+  
+  /* For extra large screens (Extra Large Screens - XL) above 1024px */
+  @media (min-width: 1024px) {
+    img.logo {
+      width: 24rem; /* 24rem width for extra large screens */
+    }
+  }
+  
