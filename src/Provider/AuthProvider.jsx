@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({ isAuthenticated: false, role: null });
 
 
-  const signIn = (email, password) => {
+  const signIn = (url,body) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (email === "user@gmail.com" && password === "123456") {
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
         } else {
           reject(new Error("Invalid credentials"));
         }
-      }, 1000); 
+      }, 1000);
     });
   };
 

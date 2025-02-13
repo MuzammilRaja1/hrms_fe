@@ -4,7 +4,6 @@ import DashboardHome from "../Components/DashboardHome/DashboardHome";
 import AllEmployee from "../Pages/admin/AllEmployee";
 import SingleEmployee from "../Pages/SingleEmployee";
 import Signin from "../Components/Signin/Signin";
-// import Signup from "../Components/Signup/Signup";
 import PrivateRouter from "./PrivateRouter";
 import UpdateEmployee from "../Pages/UpdateEmployee";
 import Attendance from "../Pages/Attendance";
@@ -17,8 +16,6 @@ import Leaves from "../Pages/admin/Leaves";
 import Projects from "../Pages/admin/Projects";
 import Departments from "../Pages/admin/Departments";
 import ProfileEdit from "../Pages/admin/ProfileEdit";
-// import Validation from "../Pages/Validation";
-
 import Create from "../Pages/employee/Create";
 
 import UserProfile from "../Pages/employee/UserProfile";
@@ -91,7 +88,7 @@ const router = createBrowserRouter([
     ],
   },
 
-  {
+  { 
     path: "/employee",
     element: (
       <UserPrivateRouter>
