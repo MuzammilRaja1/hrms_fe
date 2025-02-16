@@ -1,16 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
   server: {
-    origin: 'https://hrm-fe.dboss.pk',
-    cors: {
-      origin: 'https://hrms.dboss.pk',
-      credentials: true 
-    }
+    proxy: {
+      '/api': {
+        target: 'https://hrms.dboss.pk',
+        changeOrigin: true,
+        secure: true,
+        ws: true,
+        rewrite: (path) => path.replace(/^\/api/, ''), // rewrite the path correctly
+      },
+    },
   },
-  preview: {
-    origin: 'https://hrm-fe.dboss.pk'
-  }
-})
+});

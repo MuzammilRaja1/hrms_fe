@@ -1,5 +1,7 @@
 
 import React, { createContext, useContext, useState } from "react";
+import { adminSignIn } from "../Service/Admin";
+import { empSignIn } from "../Service/Emp";
 
 export const AuthContext = createContext();
 
@@ -7,13 +9,18 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({ isAuthenticated: false, role: null });
 
 
-  const signIn = (url,body) => {
+  const signIn = (type,body) => {
+    console.log(type, body,"type,body")
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (email === "user@gmail.com" && password === "123456") {
+        if (type === "EMP") {
+          const result =  empSignIn(body)
+          console.log(result,"resultresult")
           setAuth({ isAuthenticated: true, role: "user" });
           resolve({ user: { email, role: "user" } });
-        } else if (email === "admin@gmail.com" && password === "123456") {
+        } else if (type === "ADMIN") {
+          const result = adminSignIn(body)
+          console.log(result,"admin resultresult")
           setAuth({ isAuthenticated: true, role: "admin" });
           resolve({ user: { email, role: "admin" } });
         } else {

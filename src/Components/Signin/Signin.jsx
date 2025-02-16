@@ -4,7 +4,6 @@ import { MdEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { login } from "../../Service/Emp";
 import InputCustom from "../common/InputCustom";
 import LabelForm from "../common/LabelForm";
 import logo from "/assets/logo.png";
@@ -41,7 +40,7 @@ const Signin = () => {
     }
 
     try {
-      const result = await login(formData);
+      const result = await signIn("EMP",formData);
       console.log(result,"resultresultresult")
       setFormData({ email: "", password: "" });
 

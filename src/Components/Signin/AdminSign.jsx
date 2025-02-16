@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Provider/AuthProvider";
-import logo from "/assets/logo.png";
-import { z } from "zod";
-import { FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import LabelForm from "../common/LabelForm";
+import { Link, useNavigate } from "react-router-dom";
+import { z } from "zod";
+import { AuthContext } from "../../Provider/AuthProvider";
 import InputCustom from "../common/InputCustom";
+import LabelForm from "../common/LabelForm";
+import logo from "/assets/logo.png";
 
 const schema = z.object({
   email: z.string().email("Invalid email address"),
@@ -40,7 +40,7 @@ const AdminSign = () => {
     }
 
     try {
-      const result = await signIn(formData.email, formData.password);
+      const result = await signIn("ADMIN",formData);
       setFormData({ email: "", password: "" });
 
       if (result.user.role === "admin") {
